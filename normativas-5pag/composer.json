@@ -1,0 +1,7 @@
+{
+    "name": "usuario/normativas-5pag",
+    "type": "library",
+    "require": {
+        "mpdf/mpdf": "^6.1"
+    }
+}

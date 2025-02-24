@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telecomunicaciones</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Estilos personalizados -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Font Awesome para íconos -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"><i class="fas fa-satellite-dish"></i> Normativas telecomunicaciones</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <div class="dropdown">
+                        <button class="btn btn-outline-light dropdown-toggle" type="button" id="loginDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-sign-in-alt"></i> Iniciar Sesión
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end p-3" aria-labelledby="loginDropdown" id="dropdown-menu">
+                            <form id="login-form">
+                                <div class="mb-2">
+                                    <label for="username" class="form-label">Usuario</label>
+                                    <input type="text" class="form-control" id="username" required>
+                                </div>
+                                <div class="mb-2">
+                                    <label for="password" class="form-label">Contraseña</label>
+                                    <input type="password" class="form-control" id="password" required>
+                                </div>
+                                <button type="submit" class="btn btn-primary w-100">Iniciar Sesión</button>
+                            </form>
+                            <hr>
+                            <li><a class="dropdown-item" href="#" id="configuracion"><i class="fas fa-cogs"></i> Configuración</a></li>
+                        </ul>
+                    </div>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div id="main-content" class="container mt-5 pt-5">
+        <h1 class="text-center my-4">Normativas</h1>
+
+        <!-- Botón para agregar normativa (solo en modo admin) -->
+        <button id="btn-agregar-normativa" class="btn btn-success d-none mb-3">
+            <i class="fas fa-plus"></i> Agregar Normativa
+        </button>
+
+        <!-- Formulario para agregar nueva normativa (oculto por defecto) -->
+        <div id="form-agregar-normativa" class="d-none mb-3">
+            <h3 class="text-center">Agregar Nueva Normativa</h3>
+            <form id="form-agregar-normativa">
+                <div class="mb-2">
+                    <label for="nueva-normativa-titulo" class="form-label">Título</label>
+                    <input type="text" class="form-control" id="nueva-normativa-titulo" required>
+                </div>
+                <div class="mb-2">
+                    <label for="nueva-normativa-contenido" class="form-label">Contenido</label>
+                    <textarea class="form-control" id="nueva-normativa-contenido" rows="4" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary w-100">Guardar Normativa</button>
+            </form>
+        </div>
+
+        <div class="row mt-4" id="normativas-container">
+            <!-- Las normativas se generarán aquí dinámicamente con JavaScript -->
+        </div>
+    </div>
+    
+    <!-- Contenedor de contenido de normativa -->
+    <div id="normativa-content" class="d-none container mt-4">
+        <button id="btn-regresar" class="btn btn-secondary mb-3">⬅ Regresar</button>
+        <div id="contenido-normativa"></div>
+    </div>
+
+    <!-- Modal de configuración -->
+    <div id="configuracion-modal" class="d-none">
+        <button id="btn-cancelar-config" class="btn btn-danger mb-3">Cancelar</button>
+        <h2>Administrar Normativas</h2>
+        <h3 class="mt-4">Normativas Existentes</h3>
+        <div id="config-normativas-container">
+            <!-- Las normativas se generarán aquí dinámicamente con JavaScript -->
+        </div>
+    </div>
+
+    <!-- Modal de edición -->
+    <div id="edit-modal" class="d-none">
+        <button id="btn-salir-edicion" class="btn btn-secondary mb-3">Salir del Modo Edición</button>
+        <form id="form-edicion">
+            <div class="mb-2">
+                <label for="edit-titulo" class="form-label">Título de la Normativa</label>
+                <input type="text" class="form-control" id="edit-titulo" required>
+            </div>
+            <div class="mb-2">
+                <label for="edit-contenido" class="form-label">Contenido de la Normativa</label>
+                <textarea class="form-control" id="edit-contenido" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-success">Guardar Cambios</button>
+        </form>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- JavaScript personalizado -->
+    <script src="assets/js/app.js"></script>
+</body>
+</html>
+
+
+
+

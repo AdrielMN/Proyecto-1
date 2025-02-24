@@ -1,0 +1,116 @@
+/* Reset básico */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+}
+
+/* Modal de edición */
+#edit-modal, #configuracion-modal {
+    background-color: rgba(0, 0, 0, 0.6);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    padding: 20px;
+}
+
+#edit-modal form, #configuracion-modal form {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 800px; /* Ensanchar modal */
+    display: flex;
+    flex-direction: row;  /* Colocar los elementos en fila */
+    gap: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Sección de edición */
+#edit-modal .form-section {
+    flex: 1;  /* La parte izquierda ocupa el 70% */
+    padding: 15px;
+    max-width: 500px;
+}
+
+/* Listado de normativas */
+#edit-modal .normativas-list {
+    flex: 1;  /* La parte derecha ocupa el 30% */
+    padding: 15px;
+    background-color: #f1f1f1;
+    border-radius: 8px;
+    max-height: 500px;
+    overflow-y: auto;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo de cada normativa en la lista */
+#edit-modal .normativa-item {
+    margin-bottom: 10px;
+}
+
+#edit-modal .normativa-item button {
+    font-size: 1rem;
+    margin-top: 5px;
+}
+
+/* Estilo de los botones */
+#edit-modal button {
+    font-size: 1rem;
+    padding: 12px 20px;
+    transition: background-color 0.3s;
+    width: 100%;
+}
+
+/* Hover en los botones */
+#edit-modal button:hover {
+    transform: scale(1.05);
+}
+
+/* Estilo de los inputs */
+input, textarea {
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+
+textarea {
+    resize: vertical;
+}
+
+/* Títulos en el modal */
+#edit-modal h2, #configuracion-modal h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Animación al pasar el mouse sobre las tarjetas */
+.card {
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+#admin-actions {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+#admin-actions button {
+    font-size: 1rem;
+    padding: 10px 20px;
+    transition: background-color 0.3s;
+}
